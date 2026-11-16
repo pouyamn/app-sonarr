@@ -24,11 +24,12 @@ _This app does not require any configuration to run._
 
 ## Known issues and limitations
 
-- This app does not support Home Assistant's Ingress feature (aka, the
-  toggle that puts an app in the Home Assistant sidebar).
-  There are too many variables to take into account to make this work properly,
-  and if we would, it would be very easy to break. You could consider using an
-  iframe panel instead.
+- This app supports Home Assistant's ingress feature: enable "Show in sidebar"
+  on the app page to open Sonarr directly from the Home Assistant sidebar.
+  The URL base is set automatically on every start, so changing it in
+  Sonarr's own settings (Settings > General) has no lasting effect.
+- Port 8989 remains available directly on the host for integrations and
+  other apps that talk to Sonarr's API.
 
 ## Changelog & Releases
 

@@ -5,6 +5,11 @@ slug: sonarr
 description: Smart PVR for newsgroup and bittorrent users
 url: https://github.com/hassio-addons/app-sonarr/tree/main/README.md
 webui: http://[HOST]:[PORT:8989]
+ingress: true
+ingress_port: 8989
+ingress_entry: /
+panel_icon: mdi:television
+panel_title: Sonarr
 init: false
 arch:
   - aarch64
