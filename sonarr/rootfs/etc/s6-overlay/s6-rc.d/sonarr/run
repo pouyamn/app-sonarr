@@ -7,4 +7,13 @@
 
 bashio::log.info 'Starting Sonarr...'
 
+if bashio::supervisor.ping; then
+    ingress_entry=$(bashio::api.supervisor GET /addons/self/info '' '.ingress_entry // empty')
+    ingress_entry="${ingress_entry%/}"
+    if bashio::var.has_value "${ingress_entry}"; then
+        bashio::log.info "Setting Sonarr URL base to: ${ingress_entry}"
+        export Sonarr__Server__UrlBase="${ingress_entry}"
+    fi
+fi
+
 exec /opt/bin/Sonarr -nobrowser -data=/config
